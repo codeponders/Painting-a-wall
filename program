@@ -1,0 +1,24 @@
+from math import ceil                     
+
+wall_height = float(input())
+wall_width = float(input())
+cost_of_one_paint_can = float(input())
+sqft_gal = 350
+tax_rate = .07
+
+wall_area = wall_height * wall_width
+print(f'Wall area: {wall_area:.1f} sq ft')
+
+gallons_needed = wall_area / sqft_gal
+print(f'Paint needed: {gallons_needed:.3f} gallons')
+
+cans_needed = ceil(gallons_needed)
+print(f'Cans needed: {cans_needed} can(s)')
+
+paint_cost = cans_needed * cost_of_one_paint_can
+sales_tax =  paint_cost * tax_rate 
+total_cost = paint_cost + sales_tax
+
+print('Paint cost: 'f'${paint_cost:.2f}')
+print('Sales tax: 'f'${sales_tax:.2f}')
+print('Total cost: 'f'${total_cost:.2f}')
